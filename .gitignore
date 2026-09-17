@@ -1,0 +1,51 @@
+# Ignore everything at the repository root by default
+/*
+
+# Include only the intended backend and frontend
+!/NoBrokerCloneNew/
+!/nobroker-frontend/
+
+# Backend secrets, environment, local data
+/NoBrokerCloneNew/.env
+/NoBrokerCloneNew/.env.*
+!/NoBrokerCloneNew/.env.example
+/NoBrokerCloneNew/.venv/
+/NoBrokerCloneNew/**/__pycache__/
+/NoBrokerCloneNew/**/*.py[cod]
+/NoBrokerCloneNew/db.sqlite3
+/NoBrokerCloneNew/media/
+/NoBrokerCloneNew/staticfiles/
+# Exclude staging and duplicate frontend copies
+/NoBrokerCloneNew/safe-frontend-staging/
+/NoBrokerCloneNew/nobroker-frontend/
+# Exclude local test images and archives
+/NoBrokerCloneNew/test_images/
+/NoBrokerCloneNew/test_property*.png
+/NoBrokerCloneNew/upload_image.py
+
+# Frontend generated/local files
+/nobroker-frontend/node_modules/
+/nobroker-frontend/dist/
+/nobroker-frontend/.env
+/nobroker-frontend/.env.*
+!/nobroker-frontend/.env.example
+
+# Keep local backup out of Git
+/nobroker-frontend/backup-before-staging/
+
+# Exclude backend environment variants and local artifacts
+/NoBrokerCloneNew/.env*
+!/NoBrokerCloneNew/.env.example
+/NoBrokerCloneNew/backup*/
+/NoBrokerCloneNew/test_images/
+/NoBrokerCloneNew/test_property*.png
+/NoBrokerCloneNew/upload_image.py
+
+# Accidental/duplicate hidden app folder
+/NoBrokerCloneNew/.apps/
+
+# Unused duplicate chat package
+/NoBrokerCloneNew/chat/
+
+# Partial frontend copy inside backend
+/NoBrokerCloneNew/src/

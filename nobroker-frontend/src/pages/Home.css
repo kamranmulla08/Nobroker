@@ -1,0 +1,276 @@
+.home {
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #fff5f3,
+    #ffffff
+  );
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.search-box select {
+  width: 150px;
+  padding: 18px;
+  border: none;
+  border-right: 1px solid #ddd;
+  font-size: 16px;
+  background: white;
+  outline: none;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 18px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box button {
+  width: 180px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #d63c2e;
+}
+
+/* =========================
+   PROPERTIES SECTION
+========================= */
+
+.property-types {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 30px;
+}
+
+.property-types h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* =========================
+   PROPERTY GRID
+========================= */
+
+.property-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* =========================
+   PROPERTY CARD
+========================= */
+
+.property-type-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.property-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   PROPERTY IMAGE
+========================= */
+
+.property-image-container {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.property-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 15px;
+}
+
+/* =========================
+   PROPERTY CONTENT
+========================= */
+
+.property-card-content {
+  padding: 22px;
+}
+
+.property-card-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+  line-height: 1.4;
+}
+
+.property-location {
+  color: #666;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+/* =========================
+   PROPERTY DETAILS
+========================= */
+
+.property-details {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+.property-details span {
+  font-size: 14px;
+  color: #555;
+  background: #f7f7f7;
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.property-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.property-bottom strong {
+  font-size: 21px;
+  color: #222;
+}
+
+.property-bottom span {
+  font-size: 13px;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* =========================
+   STATUS MESSAGES
+========================= */
+
+.status-message {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.error-message {
+  color: #d63c2e;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+  .property-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box select,
+  .search-box input,
+  .search-box button {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .property-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .property-image-container {
+    height: 220px;
+  }
+}
