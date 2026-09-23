@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://nobroker-backend-iroo.onrender.com";
 
 function Login() {
   const navigate = useNavigate();

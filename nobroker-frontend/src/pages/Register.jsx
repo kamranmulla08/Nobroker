@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./Register.css";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://nobroker-backend-iroo.onrender.com";
 
 function Register() {
   const navigate = useNavigate();

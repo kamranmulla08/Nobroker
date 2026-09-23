@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext(null);
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://nobroker-backend-iroo.onrender.com";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
