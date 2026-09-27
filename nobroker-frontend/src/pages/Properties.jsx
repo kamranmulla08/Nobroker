@@ -24,8 +24,8 @@ function Properties() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    loadProperties({}, 1);
-  }, []);
+    loadProperties(activeFilters, 1);
+  }, [sort]);
 
   const loadProperties = async (filters = activeFilters, requestedPage = 1) => {
     try {

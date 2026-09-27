@@ -416,6 +416,16 @@ class InterestRequestCreateView(APIView):
                 status=status.HTTP_403_FORBIDDEN,
             )
 
+        # Only available properties can receive new interests.
+        if (
+            property_obj.availability_status
+            != Property.AvailabilityStatus.AVAILABLE
+        ):
+            return Response(
+                {"detail": "This property is no longer available."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         # Owner cannot show interest in own property
         if property_obj.owner == request.user:
             return Response(

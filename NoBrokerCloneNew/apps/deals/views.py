@@ -1,3 +1,5 @@
+from decimal import Decimal, InvalidOperation
+
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -21,9 +23,24 @@ class DealCreateView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        if not agreed_price:
+        if agreed_price is None or agreed_price == "":
             return Response(
                 {"error": "agreed_price is required."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Validate agreed_price as a positive decimal.
+        try:
+            agreed_price = Decimal(str(agreed_price))
+        except (InvalidOperation, TypeError, ValueError):
+            return Response(
+                {"error": "agreed_price must be a valid number."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if agreed_price <= 0:
+            return Response(
+                {"error": "agreed_price must be greater than zero."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
